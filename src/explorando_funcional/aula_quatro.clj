@@ -1,26 +1,16 @@
-(ns explorando_funcional.aula-tres)
+(ns explorando_funcional.aula-quatro)
 
-(defn obter-desconto [valor-bruto] (* valor-bruto 0.9))
+(def precos [30 700 1000])
+(println precos)
 
-(println (obter-desconto 100))
+(println (get precos 1))
 
-; predicate
-(defn aplica-desconto?
-  [valor-bruto]
-  (> valor-bruto 100))
+(println conj precos 5)
+(println precos)
 
-(println aplica-desconto? 100)
-(println aplica-desconto? 1000)
+(defn soma-um [valor]
+  println ("Estou somando um em " valor)
+  (+ valor 1))
 
-(defn valor-descontado
-  "Retorna o valor com desconto de 10% se o valor bruto for estritamente maior que 100."
-  [valor-bruto]
-  (if (aplica-desconto? valor-bruto)
-    (let [taxa-de-desconto (/ 10 100)
-          desconto         (* valor-bruto taxa-de-desconto)]
-      (- valor-bruto desconto))
-    valor-bruto))
-
-
-(println obter-desconto 100)
-(println obter-desconto 1000)
+(println (update precos 0 inc))
+(println (update precos 1 inc))
