@@ -31,3 +31,5 @@
 (println "Map" (map valor-descontado precos))
 (println "Filter" (map valor-descontado (filter aplica-desconto? precos)))
 
+(println "Soma do vetor" (reduce + precos))
+(println "Soma dos precos com desconto" (reduce + (map valor-descontado precos)))
